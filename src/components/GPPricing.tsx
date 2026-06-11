@@ -1,10 +1,7 @@
-import { useEffect, useState } from 'react'
-import { appendLandingParamsToUrl } from '../lib/affiliateCheckoutUrl'
 import { Check, BookOpen, Shield, Zap, Sparkles } from 'lucide-react'
 
-// Checkout Doutora Escola
-const LINK_PACOTE_BASICO = 'https://fm.doutoraescola.com.br/checkout/?s=gDtlW'      // R$ 19,70 à vista ou 2x R$ 9,85
-const LINK_PACOTE_COMPLETO = 'https://fm.doutoraescola.com.br/checkout/?s=916co'   // R$ 47,90 à vista ou 5x R$ 9,58
+const LINK_PACOTE_BASICO = 'https://fm.doutoraescola.com.br/checkout/?s=gDtlW'
+const LINK_PACOTE_COMPLETO = 'https://fm.doutoraescola.com.br/checkout/?s=916co'
 
 const bonusBasico = [
   'Guia Prático de Dificuldades Escolares (PDF)',
@@ -20,14 +17,6 @@ const bonusPacoteEspecial = [
 ]
 
 export function GPPricing() {
-  const [urlBasico, setUrlBasico] = useState(LINK_PACOTE_BASICO)
-  const [urlCompleto, setUrlCompleto] = useState(LINK_PACOTE_COMPLETO)
-
-  useEffect(() => {
-    setUrlBasico(appendLandingParamsToUrl(LINK_PACOTE_BASICO))
-    setUrlCompleto(appendLandingParamsToUrl(LINK_PACOTE_COMPLETO))
-  }, [])
-
   return (
     <section id="opcoes" className="bg-[var(--color-papel)] py-16 md:py-20">
       <div className="max-w-4xl mx-auto px-6">
@@ -65,7 +54,7 @@ export function GPPricing() {
                 </li>
               </ul>
               <a
-                href={urlBasico}
+                href={LINK_PACOTE_BASICO}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-ui flex items-center justify-center gap-2 w-full py-4 bg-[var(--color-texte-livro)] hover:bg-gray-800 text-white text-base font-bold rounded-lg transition-all"
@@ -103,7 +92,7 @@ export function GPPricing() {
               </ul>
               <p className="text-xs text-gray-500 mb-4">+ todo o conteúdo do Pacote Básico</p>
               <a
-                href={urlCompleto}
+                href={LINK_PACOTE_COMPLETO}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-ui flex items-center justify-center gap-2 w-full py-4 bg-[var(--color-destaque)] hover:bg-red-800 text-white text-base font-bold rounded-lg transition-all mt-auto"
