@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { appendLandingParamsToUrl } from '@shared/affiliateCheckoutUrl'
+import { appendLandingParamsToUrl } from '../lib/affiliateCheckoutUrl'
 import { Check, BookOpen, Shield, Zap, Sparkles } from 'lucide-react'
 
 // Checkout Doutora Escola
